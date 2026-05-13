@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Instagram, Linkedin, Youtube, TikTok, Facebook, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -114,7 +113,7 @@ export default function Footer() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="text-lg font-bold group-hover:scale-110 transition-transform">f</span>
           </motion.a>
           <motion.a
             href="#"
@@ -123,7 +122,7 @@ export default function Footer() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="text-lg font-bold group-hover:scale-110 transition-transform">in</span>
           </motion.a>
           <motion.a
             href="#"
@@ -132,7 +131,7 @@ export default function Footer() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Youtube className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="text-lg font-bold group-hover:scale-110 transition-transform">▶</span>
           </motion.a>
           <motion.a
             href="#"
@@ -141,7 +140,7 @@ export default function Footer() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <TikTok className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="text-lg font-bold group-hover:scale-110 transition-transform">♪</span>
           </motion.a>
           <motion.a
             href="#"
@@ -150,7 +149,7 @@ export default function Footer() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="text-lg font-bold group-hover:scale-110 transition-transform">f</span>
           </motion.a>
           <motion.a
             href="#"
@@ -159,7 +158,7 @@ export default function Footer() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <span className="text-lg font-bold group-hover:scale-110 transition-transform">💬</span>
           </motion.a>
         </motion.div>
 
