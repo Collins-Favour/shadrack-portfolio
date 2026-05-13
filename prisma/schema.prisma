@@ -1,0 +1,112 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// User model for authentication
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  password  String
+  name      String
+  role      String     @default("user") // user, admin
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  bookings  Booking[]
+}
+
+// Booking model
+model Booking {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fullName        String
+  email           String
+  phone           String
+  organization    String?
+  eventType       String   // Speaking, Church Ministry, Corporate Event, Mentorship, Consultation
+  date            DateTime
+  time            String
+  location        String
+  notes           String?
+  status          String   @default("pending") // pending, approved, rejected, completed
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@index([userId])
+  @@index([status])
+  @@index([date])
+}
+
+// Contact messages
+model Message {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String
+  message   String
+  anonymous Boolean  @default(false)
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+// Testimonials
+model Testimonial {
+  id        String   @id @default(cuid())
+  author    String
+  role      String
+  content   String
+  image     String?
+  rating    Int      @default(5)
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Speaking events/gallery
+model Event {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  category    String   // Speaking, Ministry, Corporate, Mentorship
+  image       String?
+  date        DateTime
+  location    String?
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Achievements/Statistics
+model Statistic {
+  id    String  @id @default(cuid())
+  key   String  @unique
+  value String
+}
+
+// Analytics data
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  eventType String   // page_view, booking, contact, etc
+  page      String?
+  source    String?
+  device    String?
+  referrer  String?
+  createdAt DateTime @default(now())
+  
+  @@index([eventType])
+  @@index([createdAt])
+}
+
+// Site settings/content
+model SiteContent {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
