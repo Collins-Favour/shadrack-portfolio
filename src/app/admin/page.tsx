@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
