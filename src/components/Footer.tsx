@@ -2,17 +2,18 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { Instagram, Linkedin, Youtube, TikTok, Facebook, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { name: 'Instagram', url: '#', icon: '📷' },
-    { name: 'LinkedIn', url: '#', icon: '💼' },
-    { name: 'YouTube', url: '#', icon: '📺' },
-    { name: 'TikTok', url: '#', icon: '🎵' },
-    { name: 'Facebook', url: '#', icon: '📘' },
-    { name: 'WhatsApp', url: '#', icon: '💬' },
+    { name: 'Instagram', url: '#', icon: Instagram },
+    { name: 'LinkedIn', url: '#', icon: Linkedin },
+    { name: 'YouTube', url: '#', icon: Youtube },
+    { name: 'TikTok', url: '#', icon: TikTok },
+    { name: 'Facebook', url: '#', icon: Facebook },
+    { name: 'WhatsApp', url: '#', icon: MessageCircle },
   ]
 
   const footerLinks = [
@@ -20,7 +21,6 @@ export default function Footer() {
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
     { label: 'Booking', href: '/booking' },
-    { label: 'Admin', href: '/admin' },
   ]
 
   return (
@@ -116,17 +116,21 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           className="flex flex-wrap gap-4 justify-center mb-8 pb-8 border-b border-white/10"
         >
-          {socialLinks.map((social) => (
-            <a
-              key={social.name}
-              href={social.url}
-              title={social.name}
-              className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-accent hover:text-black rounded-full transition-all duration-300"
-              rel="noopener noreferrer"
-            >
-              <span className="text-lg">{social.icon}</span>
-            </a>
-          ))}
+          {socialLinks.map((social) => {
+            const IconComponent = social.icon
+            return (
+              <motion.a
+                key={social.name}
+                href={social.url}
+                title={social.name}
+                className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <IconComponent className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </motion.a>
+            )
+          })}
         </motion.div>
 
         {/* Copyright */}

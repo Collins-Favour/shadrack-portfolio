@@ -7,10 +7,10 @@ export default function Statistics() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
 
   const stats = [
-    { value: '10+', label: 'Years in Leadership', icon: '📈' },
-    { value: '4', label: 'Countries Impacted', icon: '🌍' },
-    { value: '1000+', label: 'Professionals Mentored', icon: '👥' },
-    { value: '50+', label: 'Speaking Engagements', icon: '🎤' },
+    { value: '10+', label: 'Years in Leadership', icon: '—' },
+    { value: '4', label: 'Countries Impacted', icon: '—' },
+    { value: '1000+', label: 'Mentored', icon: '—' },
+    { value: '50+', label: 'Speaking Engagements', icon: '—' },
   ]
 
   return (
@@ -37,7 +37,7 @@ export default function Statistics() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="text-5xl mb-4">{stat.icon}</div>
+              <div className="w-1 h-12 bg-gradient-to-b from-accent to-accent/20 mx-auto mb-4"></div>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : { opacity: 0 }}

@@ -7,7 +7,7 @@ export default function GalleryStrip() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
 
   const images = [
-    { title: 'Speaking Engagement 1', type: 'event' },
+    { title: 'Speaking Engagement Placeholder', type: 'event' },
     { title: 'Ministry Moment', type: 'ministry' },
     { title: 'Corporate Event', type: 'corporate' },
     { title: 'Speaking Engagement 2', type: 'event' },

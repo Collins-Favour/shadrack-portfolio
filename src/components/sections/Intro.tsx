@@ -7,11 +7,11 @@ export default function Intro() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
 
   const roles = [
-    { icon: '🎤', label: 'Speaker' },
-    { icon: '⛪', label: 'Pastor' },
-    { icon: '💼', label: 'Marketplace Leader' },
-    { icon: '👥', label: 'Mentor' },
-    { icon: '👨‍👩‍👧‍👦', label: 'Family Man' },
+    { label: 'Speaker' },
+    { label: 'Pastor' },
+    { label: 'Marketplace Leader' },
+    { label: 'Mentor' },
+    { label: 'Family Man' },
   ]
 
   return (
@@ -48,9 +48,9 @@ export default function Intro() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="px-4 py-2 bg-white border border-black/10 rounded-full flex items-center gap-2"
+                  className="px-4 py-2 bg-white border border-black/10 rounded-full flex items-center gap-2 hover:border-accent transition-colors hover:bg-accent/5"
                 >
-                  <span>{role.icon}</span>
+                  <span className="text-accent text-xs font-bold">•</span>
                   <span className="text-sm font-medium">{role.label}</span>
                 </motion.div>
               ))}
@@ -69,7 +69,7 @@ export default function Intro() {
                 <svg className="w-32 h-32 mx-auto mb-6 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-                <p className="text-sm">Professional image</p>
+                <p className="text-sm">Gallery Placeholder</p>
               </div>
             </div>
           </motion.div>

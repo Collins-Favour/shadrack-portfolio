@@ -42,7 +42,7 @@ export default function TestimonialsSlider() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="mb-6">What People Say</h2>
+          <h2 className="mb-6">Testimonials from Leaders, Professionals & Community Members</h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
             Testimonials from leaders, professionals, and community members
           </p>
