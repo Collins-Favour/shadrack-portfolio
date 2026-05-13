@@ -62,7 +62,7 @@ export default function TestimonialsSlider() {
                   <span key={i} className="text-accent text-lg">★</span>
                 ))}
               </div>
-              <p className="text-white/90 mb-6 leading-relaxed italic">"{testimonial.content}"</p>
+              <p className="text-white/90 mb-6 leading-relaxed italic">&quot;{testimonial.content}&quot;</p>
               <div>
                 <p className="font-semibold">{testimonial.author}</p>
                 <p className="text-white/60 text-sm">{testimonial.role}</p>

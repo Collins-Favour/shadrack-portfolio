@@ -40,7 +40,7 @@ export default function FeaturedHighlights() {
         >
           <h2 className="mb-6">Featured Highlights</h2>
           <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Shadrack's multifaceted expertise spans leadership, marketplace innovation, spiritual guidance, and mentorship.
+            Shadrack&apos;s multifaceted expertise spans leadership, marketplace innovation, spiritual guidance, and mentorship.
           </p>
         </motion.div>
 
