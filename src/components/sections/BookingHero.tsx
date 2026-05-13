@@ -15,7 +15,7 @@ export default function BookingHero() {
           <span className="text-sm uppercase tracking-widest text-accent font-medium mb-6 inline-block">Professional Booking</span>
           <h1 className="mb-6 text-white">Book Shadrack for Your Event</h1>
           <p className="text-lg text-white/80">
-            Select your booking type, choose your preferred date and time, and get on Shadrack's calendar. Professional speaking and mentorship for organizations and communities.
+            Select your booking type, choose your preferred date and time, and get on Shadrack&apos;s calendar. Professional speaking and mentorship for organizations and communities.
           </p>
         </motion.div>
       </div>

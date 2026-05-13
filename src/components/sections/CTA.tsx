@@ -23,7 +23,7 @@ export default function CTA() {
           <h2 className="mb-6 text-white">Ready to Connect?</h2>
 
           <p className="text-xl text-white/80 mb-12">
-            Whether you're seeking leadership guidance, looking for a speaker, or exploring partnership opportunities, let's have a conversation.
+            Whether you&apos;re seeking leadership guidance, looking for a speaker, or exploring partnership opportunities, let&apos;s have a conversation.
           </p>
 
           <motion.div

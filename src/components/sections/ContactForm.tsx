@@ -116,7 +116,7 @@ export default function ContactForm() {
           animate={{ opacity: 1, y: 0 }}
           className="text-green-600 text-sm text-center"
         >
-          Message sent successfully! I'll be in touch soon.
+          Message sent successfully! I&apos;ll be in touch soon.
         </motion.p>
       )}
     </motion.form>

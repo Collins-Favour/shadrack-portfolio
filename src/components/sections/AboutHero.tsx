@@ -15,7 +15,7 @@ export default function AboutHero() {
           <span className="text-sm uppercase tracking-widest text-accent font-medium mb-6 inline-block">About Shadrack</span>
           <h1 className="mb-6">A Life Dedicated to Excellence</h1>
           <p className="text-lg text-text-light">
-            Shadrack G Mahinda's story is one of purposeful leadership, authentic faith, and transformational impact across multiple domains.
+            Shadrack G Mahinda&apos;s story is one of purposeful leadership, authentic faith, and transformational impact across multiple domains.
           </p>
         </motion.div>
       </div>
