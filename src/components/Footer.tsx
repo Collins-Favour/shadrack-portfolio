@@ -7,15 +7,6 @@ import { Instagram, Linkedin, Youtube, TikTok, Facebook, MessageCircle } from 'l
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const socialLinks = [
-    { name: 'Instagram', url: '#', icon: Instagram },
-    { name: 'LinkedIn', url: '#', icon: Linkedin },
-    { name: 'YouTube', url: '#', icon: Youtube },
-    { name: 'TikTok', url: '#', icon: TikTok },
-    { name: 'Facebook', url: '#', icon: Facebook },
-    { name: 'WhatsApp', url: '#', icon: MessageCircle },
-  ]
-
   const footerLinks = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
@@ -116,21 +107,60 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           className="flex flex-wrap gap-4 justify-center mb-8 pb-8 border-b border-white/10"
         >
-          {socialLinks.map((social) => {
-            const IconComponent = social.icon
-            return (
-              <motion.a
-                key={social.name}
-                href={social.url}
-                title={social.name}
-                className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <IconComponent className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </motion.a>
-            )
-          })}
+          <motion.a
+            href="#"
+            title="Instagram"
+            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </motion.a>
+          <motion.a
+            href="#"
+            title="LinkedIn"
+            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </motion.a>
+          <motion.a
+            href="#"
+            title="YouTube"
+            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Youtube className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </motion.a>
+          <motion.a
+            href="#"
+            title="TikTok"
+            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <TikTok className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </motion.a>
+          <motion.a
+            href="#"
+            title="Facebook"
+            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </motion.a>
+          <motion.a
+            href="#"
+            title="WhatsApp"
+            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </motion.a>
         </motion.div>
 
         {/* Copyright */}
