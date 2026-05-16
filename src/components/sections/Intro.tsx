@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Image from 'next/image'
 
 export default function Intro() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
@@ -14,64 +15,148 @@ export default function Intro() {
     { label: 'Family Man' },
   ]
 
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.6,
+      },
+    }),
+  }
+
   return (
-    <section ref={ref} className="section-spacing bg-bg">
-      <div className="container-custom">
+    <section ref={ref} className="section-spacing bg-gradient-to-b from-bg to-black/5 relative overflow-hidden">
+      {/* Background animation */}
+      <motion.div
+        className="absolute -top-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.6, 0.3],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+        }}
+      />
+
+      <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text content */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="mb-8">
-              Meet <span className="text-accent">Shadrack</span>
-            </h2>
+            <motion.h2
+              className="mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6 }}
+            >
+              Meet <motion.span
+                className="text-accent inline-block"
+                animate={inView ? { scale: [1, 1.05, 1] } : { scale: 1 }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                Shadrack
+              </motion.span>
+            </motion.h2>
 
-            <p className="text-lg text-text-light mb-6 leading-relaxed">
+            <motion.p
+              className="text-lg text-text-light mb-6 leading-relaxed"
+              custom={0}
+              variants={textVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+            >
               Shadrack G Mahinda is a transformational leader with a thought-provoking presence and a creative, lovable personality. He brings unique value to every engagement, whether as a pastor, marketplace professional, speaker, or mentor.
-            </p>
+            </motion.p>
 
-            <p className="text-base text-text-light mb-8 leading-relaxed">
+            <motion.p
+              className="text-base text-text-light mb-8 leading-relaxed"
+              custom={1}
+              variants={textVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+            >
               With over 10 years of strategic market growth leadership at Samsung Electronics Kenya, Shadrack has driven expansion across DRC, Rwanda, Uganda, and Kenya. Simultaneously, he serves as a pastor at Wisdom Sanctuary Church, Thika, combining professional excellence with spiritual leadership.
-            </p>
+            </motion.p>
 
-            <p className="text-base text-text-light mb-8 leading-relaxed">
+            <motion.p
+              className="text-base text-text-light mb-8 leading-relaxed"
+              custom={2}
+              variants={textVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+            >
               Shadrack is married to Hannah and blessed with three children: Nathan, Nissi, and Gabriella. He enjoys hiking and meditation walks as personal rejuvenation practices.
-            </p>
+            </motion.p>
 
-            {/* Role tags */}
-            <div className="flex flex-wrap gap-3">
+            {/* Role tags with staggered animation */}
+            <motion.div
+              className="flex flex-wrap gap-3"
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.3 }}
+            >
               {roles.map((role, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="px-4 py-2 bg-white border border-black/10 rounded-full flex items-center gap-2 hover:border-accent transition-colors hover:bg-accent/5"
+                  initial={{ opacity: 0, scale: 0.5, y: 10 }}
+                  animate={inView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.5, y: 10 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.4 + index * 0.08,
+                    ease: [0.34, 1.56, 0.64, 1],
+                  }}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                  }}
+                  className="px-4 py-2 bg-white border border-black/10 rounded-full flex items-center gap-2 hover:border-accent transition-all cursor-pointer group"
                 >
-                  <span className="text-accent text-xs font-bold">•</span>
-                  <span className="text-sm font-medium">{role.label}</span>
+                  <motion.span
+                    className="text-accent text-xs font-bold"
+                    animate={inView ? { rotate: 360 } : { rotate: 0 }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    •
+                  </motion.span>
+                  <span className="text-sm font-medium group-hover:text-accent transition-colors">{role.label}</span>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* Image placeholder */}
+          {/* Image placeholder with animations */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.8 }}
-            className="relative aspect-square bg-gradient-to-br from-accent/20 to-black/10 rounded-2xl overflow-hidden"
+            initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+            animate={inView ? { opacity: 1, scale: 1, rotate: 0 } : { opacity: 0, scale: 0.9, rotate: -5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative aspect-square bg-gradient-to-br from-accent/20 to-black/10 rounded-3xl overflow-hidden border border-accent/20"
           >
-            <div className="w-full h-full flex items-center justify-center text-text-light/30">
-              <div className="text-center">
-                <svg className="w-32 h-32 mx-auto mb-6 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <p className="text-sm">Gallery Placeholder</p>
-              </div>
-            </div>
+            {/* Animated border glow */}
+            <motion.div
+              className="absolute inset-0 rounded-3xl border border-accent/30"
+              animate={{
+                borderColor: ['rgba(212, 175, 55, 0.3)', 'rgba(212, 175, 55, 0.6)', 'rgba(212, 175, 55, 0.3)'],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+              }}
+            />
+
+            <Image
+              src="/images/shadrack-casual.jpg"
+              alt="Shadrack G Mahinda - Leadership Portrait"
+              fill
+              className="object-cover object-top"
+              quality={95}
+            />
           </motion.div>
         </div>
       </div>

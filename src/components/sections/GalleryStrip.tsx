@@ -2,17 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Image from 'next/image'
 
 export default function GalleryStrip() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
 
   const images = [
-    { title: 'Speaking Engagement Placeholder', type: 'event' },
-    { title: 'Ministry Moment', type: 'ministry' },
-    { title: 'Corporate Event', type: 'corporate' },
-    { title: 'Speaking Engagement 2', type: 'event' },
-    { title: 'Leadership Workshop', type: 'workshop' },
-    { title: 'Community Impact', type: 'community' },
+    { title: 'Leadership Portrait', type: 'professional', image: '/images/shadrack-profile.jpg' },
+    { title: 'Speaking Engagement', type: 'event', image: '/images/shadrack-profile.jpg' },
+    { title: 'Community Impact', type: 'community', image: '/images/shadrack-profile.jpg' },
   ]
 
   return (
@@ -44,15 +42,16 @@ export default function GalleryStrip() {
               animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-accent/10 to-black/10 rounded-xl overflow-hidden cursor-pointer group"
+              className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-accent/10 to-black/10 rounded-xl overflow-hidden cursor-pointer group relative"
             >
               <div className="w-full h-full flex items-center justify-center relative">
-                <div className="text-center text-text-light/50">
-                  <svg className="w-16 h-16 mx-auto mb-3 opacity-30 group-hover:opacity-50 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-xs">{image.title}</p>
-                </div>
+                <Image
+                  src={image.image}
+                  alt={image.title}
+                  fill
+                  className="object-cover object-top group-hover:scale-110 transition-transform duration-300"
+                  quality={85}
+                />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
               </div>
             </motion.div>

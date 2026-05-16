@@ -86,7 +86,7 @@ export default function BookingSystem() {
             animate={{ opacity: 1, scale: 1 }}
             className="text-center py-12"
           >
-            <div className="text-6xl mb-4">✓</div>
+            <div className="text-6xl mb-4 text-accent font-bold">✔</div>
             <h2 className="mb-4">Booking Confirmed!</h2>
             <p className="text-text-light mb-2">Thank you for your booking request.</p>
             <p className="text-text-light">A confirmation email has been sent to {formData.email}</p>

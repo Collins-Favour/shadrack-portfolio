@@ -6,35 +6,31 @@ export default function ContactInfo() {
   const contactDetails = [
     {
       title: 'Email',
-      value: 'contact@shadrack.com',
-      link: 'mailto:contact@shadrack.com',
-      icon: '✉️',
+      value: 'gichuhimahinda@gmail.com',
+      link: 'mailto:gichuhimahinda@gmail.com',
     },
     {
       title: 'Phone',
       value: '+254 7XX XXX XXX',
       link: 'tel:+254',
-      icon: '📱',
     },
     {
       title: 'WhatsApp',
       value: '+254 7XX XXX XXX',
       link: 'https://wa.me/254',
-      icon: '💬',
     },
     {
       title: 'Location',
       value: 'Thika, Kenya',
-      icon: '📍',
     },
   ]
 
   const socialLinks = [
-    { name: 'Instagram', url: 'https://instagram.com/shadrack', icon: '📷' },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/shadrack', icon: '💼' },
-    { name: 'YouTube', url: 'https://youtube.com/@shadrack', icon: '📺' },
-    { name: 'TikTok', url: 'https://tiktok.com/@shadrack', icon: '🎵' },
-    { name: 'Facebook', url: 'https://facebook.com/shadrack', icon: '📘' },
+    { name: 'Instagram', url: 'https://instagram.com/shadrack' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/shadrack' },
+    { name: 'YouTube', url: 'https://youtube.com/@shadrack' },
+    { name: 'TikTok', url: 'https://tiktok.com/@shadrack' },
+    { name: 'Facebook', url: 'https://facebook.com/shadrack' },
   ]
 
   return (
@@ -65,11 +61,11 @@ export default function ContactInfo() {
                   rel={detail.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="text-lg font-semibold hover:text-accent transition-colors"
                 >
-                  {detail.icon} {detail.value}
+                  {detail.value}
                 </a>
               ) : (
                 <p className="text-lg font-semibold">
-                  {detail.icon} {detail.value}
+                  {detail.value}
                 </p>
               )}
             </motion.div>
@@ -92,9 +88,9 @@ export default function ContactInfo() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="w-12 h-12 flex items-center justify-center bg-black text-white rounded-full hover:bg-accent hover:text-black transition-all duration-300"
+              className="px-4 py-2 bg-black text-white rounded-full hover:bg-accent hover:text-black transition-all duration-300 text-sm font-medium"
             >
-              <span className="text-xl">{social.icon}</span>
+              {social.name}
             </motion.a>
           ))}
         </div>

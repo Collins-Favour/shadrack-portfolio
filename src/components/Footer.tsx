@@ -59,8 +59,8 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="mailto:contact@shadrack.com" className="text-white/60 hover:text-accent transition-colors">
-                  contact@shadrack.com
+                <a href="mailto:gichuhimahinda@gmail.com" className="text-white/60 hover:text-accent transition-colors">
+                  gichuhimahinda@gmail.com
                 </a>
               </li>
               <li>
@@ -107,58 +107,59 @@ export default function Footer() {
           className="flex flex-wrap gap-4 justify-center mb-8 pb-8 border-b border-white/10"
         >
           <motion.a
-            href="#"
-            title="Instagram"
-            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-lg font-bold group-hover:scale-110 transition-transform">f</span>
-          </motion.a>
-          <motion.a
-            href="#"
-            title="LinkedIn"
-            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-lg font-bold group-hover:scale-110 transition-transform">in</span>
-          </motion.a>
-          <motion.a
-            href="#"
-            title="YouTube"
-            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-lg font-bold group-hover:scale-110 transition-transform">▶</span>
-          </motion.a>
-          <motion.a
-            href="#"
-            title="TikTok"
-            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-lg font-bold group-hover:scale-110 transition-transform">♪</span>
-          </motion.a>
-          <motion.a
-            href="#"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
             title="Facebook"
-            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
-            whileHover={{ scale: 1.1 }}
+            className="px-4 py-2 text-sm bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-lg font-bold group-hover:scale-110 transition-transform">f</span>
+            Facebook
           </motion.a>
           <motion.a
-            href="#"
-            title="WhatsApp"
-            className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300 group"
-            whileHover={{ scale: 1.1 }}
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+            className="px-4 py-2 text-sm bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-lg font-bold group-hover:scale-110 transition-transform">💬</span>
+            LinkedIn
+          </motion.a>
+          <motion.a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="YouTube"
+            className="px-4 py-2 text-sm bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            YouTube
+          </motion.a>
+          <motion.a
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="TikTok"
+            className="px-4 py-2 text-sm bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            TikTok
+          </motion.a>
+          <motion.a
+            href="https://wa.me/254"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="WhatsApp"
+            className="px-4 py-2 text-sm bg-white/5 border border-white/20 hover:bg-accent hover:text-black hover:border-accent rounded-full transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            WhatsApp
           </motion.a>
         </motion.div>
 
@@ -168,7 +169,7 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-white/50 text-sm"
+          className="text-center text-white/50 text-sm space-y-4"
         >
           <p>
             &copy; {currentYear} Shadrack G Mahinda. All rights reserved. | 
@@ -176,6 +177,25 @@ export default function Footer() {
               Privacy Policy
             </Link>
           </p>
+          
+          {/* Admin Access */}
+          <motion.div
+            className="flex justify-center items-center gap-2"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <span className="text-xs text-white/40">Admin:</span>
+            <motion.a
+              href="/admin"
+              className="text-xs px-3 py-1 bg-white/5 border border-white/20 rounded-full hover:bg-accent/20 hover:border-accent transition-all duration-300 text-accent"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Dashboard Access
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
     </footer>

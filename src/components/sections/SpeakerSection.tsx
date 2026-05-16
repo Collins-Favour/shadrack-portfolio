@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Image from 'next/image'
 
 export default function SpeakerSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
@@ -58,8 +59,16 @@ export default function SpeakerSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.8 }}
-            className="aspect-square bg-gradient-to-br from-accent/20 to-black/10 rounded-2xl"
-          />
+            className="relative aspect-square bg-gradient-to-br from-accent/20 to-black/10 rounded-2xl overflow-hidden"
+          >
+            <Image
+              src="/images/shadrack-profile.jpg"
+              alt="Shadrack Speaking"
+              fill
+              className="object-cover object-top"
+              quality={95}
+            />
+          </motion.div>
         </div>
       </div>
     </section>

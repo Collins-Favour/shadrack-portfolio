@@ -10,22 +10,18 @@ export default function FeaturedHighlights() {
     {
       title: 'Leadership',
       description: 'Transformational leadership across corporate and ministry sectors',
-      icon: '👑',
     },
     {
       title: 'Marketplace Impact',
       description: '10+ years driving strategic growth across multiple African markets',
-      icon: '🌍',
     },
     {
       title: 'Ministry',
       description: 'Serving as pastor at Wisdom Sanctuary Church, guiding spiritual growth',
-      icon: '✨',
     },
     {
       title: 'Mentorship',
       description: 'Empowering leaders and professionals through coaching and guidance',
-      icon: '🤝',
     },
   ]
 
@@ -54,7 +50,6 @@ export default function FeaturedHighlights() {
               whileHover={{ y: -5 }}
               className="p-8 bg-bg border border-black/10 rounded-xl hover:border-accent/30 transition-colors"
             >
-              <div className="text-4xl mb-4">{highlight.icon}</div>
               <h3 className="text-xl font-serif font-bold mb-3">{highlight.title}</h3>
               <p className="text-text-light text-sm leading-relaxed">{highlight.description}</p>
             </motion.div>
